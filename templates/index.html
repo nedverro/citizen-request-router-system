@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Dashboard ADD</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 40px; background: #f5f5f5; }
+        h1   { color: #333; }
+        .stats { display: flex; gap: 20px; margin: 30px 0; }
+        .card  { background: white; padding: 20px 30px; border-radius: 8px;
+                 box-shadow: 0 2px 4px rgba(0,0,0,0.1); text-align: center; }
+        .card h2 { font-size: 40px; margin: 0; color: #2196F3; }
+        .card p  { margin: 5px 0 0; color: #666; }
+        a { color: #2196F3; text-decoration: none; font-size: 18px; }
+    </style>
+</head>
+<body>
+    <h1>🔔 Dashboard Notifications ADD</h1>
+    <h3>Système intelligent e-Participation — data.gov.ma</h3>
+
+    <div class="stats">
+        <div class="card">
+            <h2>{{ stats.total }}</h2>
+            <p>Total demandes</p>
+        </div>
+        <div class="card">
+            <h2 style="color:green">{{ stats.auto_route }}</h2>
+            <p>Auto-routées</p>
+        </div>
+        <div class="card">
+            <h2 style="color:orange">{{ stats.manuel }}</h2>
+            <p>Revue manuelle</p>
+        </div>
+        <div class="card">
+            <h2 style="color:red">{{ stats.en_attente }}</h2>
+            <p>En attente</p>
+        </div>
+    </div>
+
+    <a href="/notifications">→ Voir toutes les notifications</a>
+</body>
+</html>

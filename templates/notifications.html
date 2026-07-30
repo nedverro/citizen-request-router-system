@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Notifications</title>
+    <style>
+        body  { font-family: Arial, sans-serif; margin: 40px; background: #f5f5f5; }
+        h1    { color: #333; }
+        table { width: 100%; border-collapse: collapse; background: white;
+                border-radius: 8px; overflow: hidden;
+                box-shadow: 0 2px 4px rgba(0,0,0,0.1); }
+        th    { background: #2196F3; color: white; padding: 12px; text-align: left; }
+        td    { padding: 10px 12px; border-bottom: 1px solid #eee; }
+        tr:hover { background: #f9f9f9; }
+        .auto   { color: green; font-weight: bold; }
+        .manual { color: orange; font-weight: bold; }
+        a { color: #2196F3; }
+    </style>
+</head>
+<body>
+    <h1>🔔 Liste des Notifications</h1>
+    <a href="/">← Retour au dashboard</a>
+    <br><br>
+
+    <table>
+        <tr>
+            <th>#</th>
+            <th>Titre de la demande</th>
+            <th>Organisme prédit</th>
+            <th>Score</th>
+            <th>Décision</th>
+            <th>Statut</th>
+            <th>Date</th>
+        </tr>
+        {% for n in notifications %}
+        <tr>
+            <td>{{ n.id }}</td>
+            <td><a href="{{ n.url }}" target="_blank">{{ n.titre[:60] }}...</a></td>
+            <td>{{ n.nom_organisme }}</td>
+            <td>{{ "%.2f"|format(n.score_confiance * 100) }}%</td>
+            <td class="{{ 'auto' if n.decision == 'auto_route' else 'manual' }}">
+                {{ n.decision }}
+            </td>
+            <td>{{ n.statut }}</td>
+            <td>{{ n.date_creation }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+</body>
+</html>
