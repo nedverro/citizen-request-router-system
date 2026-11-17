@@ -26,7 +26,7 @@ data.gov.ma (CKAN API + feedback pages)
                                                │
                      build_notifications.py ──► notifications.db (SQLite)
                                                │
-                                app.py ──► Flask dashboard (localhost:5000)
+                                app.py ──► Flask dashboard
 ```
 
 - **Lexical matching:** TF-IDF vectors of the request vs. each organisation's profile (name, description, dataset keywords)
@@ -56,7 +56,7 @@ Evaluation details: `evaluation.py`, `feedbacks_eval.csv` (labels), `rapport_eva
 pip install -r requirements.txt
 
 # Dashboard with the included results
-python app.py                      # → http://127.0.0.1:5000
+python app.py                      # then open the address shown in the terminal
 
 # Full pipeline (needs internet: data.gov.ma + model download on first run)
 python extract_organisations.py
