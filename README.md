@@ -77,4 +77,4 @@ Python 3.13 · pandas · scikit-learn (TF-IDF) · Sentence-Transformers · Flask
 
 ## Author
 
-**Riyad Nouar** — Computer Engineering student (Cybersecurity), UIR
+**Riyad Nouar**
