@@ -48,4 +48,7 @@ def notifications():
     return render_template("notifications.html", notifications=data)
 
 if __name__ == "__main__":
-    app.run(debug=True)
+    import os
+    # Debug mode only when explicitly enabled (FLASK_DEBUG=1): the Werkzeug
+    # debugger allows code execution and must never be exposed.
+    app.run(host="127.0.0.1", port=5000, debug=os.environ.get("FLASK_DEBUG") == "1")
